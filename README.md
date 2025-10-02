@@ -2,9 +2,6 @@
 
 # Section 19 RecyclerView - The Grocery App
 
----
-
-````
 # 📱 RecyclerView in Android (Java)
 
 A step-by-step guide to implementing **RecyclerView** in Android using Java.
@@ -16,6 +13,7 @@ RecyclerView is a modern, flexible replacement for `ListView` and `GridView`.
 
 - **RecyclerView** efficiently displays large datasets by reusing (recycling) views.
 - Works with:
+
   - **Adapter** → Supplies data to the list.
   - **ViewHolder** → Holds item views for better performance.
   - **LayoutManager** → Defines how items are arranged (list/grid/staggered).
@@ -28,6 +26,7 @@ RecyclerView is a modern, flexible replacement for `ListView` and `GridView`.
 2. **Adapter** → Binds data to each view.
 3. **ViewHolder** → Improves scrolling efficiency.
 4. **LayoutManager** → Controls item layout:
+
    - `LinearLayoutManager` → Vertical/Horizontal list
    - `GridLayoutManager` → Grid layout
    - `StaggeredGridLayoutManager` → Pinterest-like
@@ -38,23 +37,20 @@ RecyclerView is a modern, flexible replacement for `ListView` and `GridView`.
 
 ### 1. Add Dependency
 
-```
-gradle
 implementation 'androidx.recyclerview:recyclerview:1.3.2'
-```
-````
 
 ---
 
-### 2. Add RecyclerView to Layout
+### 2. Add RecyclerView to Layout (`activity_main.xml`)
 
 ```
-xml
+
 <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recyclerView"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp"/>
+android:id="@+id/recyclerView"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="8dp"/>
+
 ```
 
 ---
@@ -62,7 +58,7 @@ xml
 ### 3. Create Item Layout (`item_row.xml`)
 
 ```
-xml
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -75,15 +71,33 @@ xml
         android:layout_height="wrap_content"
         android:text="Item Name"
         android:textSize="18sp"/>
+
 </LinearLayout>
 ```
 
 ---
 
-### 4. Create Adapter (`MyAdapter.java`)
+### 4. Create Model Class (Optional)
 
 ```
-java
+public class ItemModel {
+    private String name;
+
+    public ItemModel(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+```
+
+---
+
+### 5. Create Adapter (`MyAdapter.java`)
+
+```
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     private List<String> itemList;
@@ -123,10 +137,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
 ---
 
-### 5. Set Up RecyclerView in `MainActivity.java`
+### 6. Set Up RecyclerView in `MainActivity.java`
 
 ```
-java
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
@@ -151,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
 
 ---
 
-## 🔹 Extras You Can Add
+### 7. Extras You Can Add
 
 - Add **click listeners** (on tap or long press).
 - Use **DiffUtil** for efficient list updates.
@@ -161,4 +174,12 @@ public class MainActivity extends AppCompatActivity {
 
 ---
 
-✨ With this, you have a fully working **RecyclerView in Java**.
+✨ With this, you have a fully working **RecyclerView in Java** with all the components from your PDF screenshot included:
+
+- **Item Layout**
+- **RecyclerView** in activity
+- **Model Class**
+- **Adapter Class**
+- **ViewHolder**
+
+---
