@@ -37,7 +37,9 @@ RecyclerView is a modern, flexible replacement for `ListView` and `GridView`.
 
 ### 1. Add Dependency
 
+```
 implementation 'androidx.recyclerview:recyclerview:1.3.2'
+```
 
 ---
 
@@ -174,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
 
 ---
 
-✨ With this, you have a fully working **RecyclerView in Java** with all the components from your PDF screenshot included:
+✨ With this, you have a fully working **RecyclerView in Java**:
 
 - **Item Layout**
 - **RecyclerView** in activity
